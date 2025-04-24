@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>IT WORKS!</h1>
+  <script>
+    (async () => {
+      const URL = 'http://localhost:3000'
+      // These getContacts are equivalent
+      // async function getContacts() {
+      //   const request = await fetch(URL, {
+      //     method: 'GET',
+      //   })
+      //   return request.json()
+      // }
+      const getContacts = async () => {
+        const request = await fetch(URL, {
+          method: 'GET',
+        })
+        return request.json()
+      }
+      const createContact = async (body) => {
+        const request = await fetch(URL, {
+          method: 'POST',
+          headers: {
+            // This sets the body as raw:application/json
+            'Content-type': 'application/json'
+          },
+          body: JSON.stringify(body)
+        })
+        return request.json()
+      }
+
+      // we should 
+      console.log(await getContacts())
+      console.log(await createContact({ name: "Diana", phone: "+4615784545112" }))
+      console.log(await getContacts())
+    })()
+  </script>
+</body>
+</html>

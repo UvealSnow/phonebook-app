@@ -1,0 +1,28 @@
+{
+  "name": "phonebook-api",
+  "version": "1.0.0",
+  "description": "A simple contact management API built with Node.js and Express, allowing users to create and retrieve contacts.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch ./src/index.js",
+    "start": "node ./src/index.js"
+  },
+  "keywords": [
+    "contact",
+    "management",
+    "API",
+    "Node.js",
+    "Express"
+  ],
+  "author": {
+    "name": "Kevin Avila",
+    "email": "hola@kevinavila.pro",
+    "url": "https://kevinavila.pro"
+  },
+  "license": "UNLICENSE",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
